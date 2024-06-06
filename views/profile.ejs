@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>Profile</title>
+</head>
+<body>
+    <%- include("partials/navbar.ejs") %>
+    <!--If user is logged in-->
+    <% if(locals.username) {%>
+    <div class="profile container">
+        <form id="logout" action="/logout">
+            <img class="image" src="images/Caesar_profile_pic.webp"/>
+            <!--<img src=</%= profile_pic %>>-->
+            <h2><%= username %></h2>
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+    <% }else{ %>
+        <!--If user is not logged in-->
+        
+        <!--Login page
+        <div class="login_container">
+            <h1>Login</h1>
+            <form action="/login" method="POST">
+                <input type="text" name="username" placeholder="username"/>
+                <input type="password" name="password" placeholder="password"/>
+                <a href="/register">Register Here</a>
+                <button type="submit">Login</button>
+            </form>
+        </div>-->
+    <% } %>
+    <div class="posts_container">
+        <% if (locals.posts) { %>
+            <% for (let i = 0; i < locals.posts.length; i++) { %>
+                <% if (locals.posts[i].username === locals.username) { %>
+                    <div class="profile_post">
+                        <h2><%= locals.posts[i].title %></h2>
+                        <p><%= locals.posts[i].body %></p>
+                        <form method="POST" action="/delete/<%= locals.posts[i].post_id %> "style="display:inline;\">
+                            <button type="submit">Delete</button>
+                        </form>
+                        <form method="GET" action="/edit/<%= locals.posts[i].post_id %>" style="display:inline;">
+                            <button type="submit">Edit</button>
+                        </form>
+                    </div>
+                <% } %>
+            <% } %>
+        <% } %>
+    </div>
+</body>
+</html>

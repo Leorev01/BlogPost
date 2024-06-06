@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>Edit Post</title>
+    <style>
+        .edit_post_container>*{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            border: 3px solid black;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <%- include("partials/navbar.ejs") %>
+    <div class="edit_post_container">
+        <h1 style="border: 0;">Edit Post</h1>
+        <form method="POST" action="/edit/<%= post.post_id %>">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" value="<%= post.title %>" required>
+            <label for="body">Body:</label>
+            <textarea id="body" name="body" required><%= post.body %></textarea>
+            <button type="submit">Update Post</button>
+        </form>
+    </div>
+</body>
+</html>

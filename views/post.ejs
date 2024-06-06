@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/main.css">
+    <title>Document</title>
+</head>
+<body>
+    <!--Navbar-->
+    <%- include("partials/navbar.ejs") %>
+    <div class="whole_container">
+    <!--Feed-->
+    <%- include("partials/feed.ejs") %>
+    <!--Post-->
+        <div class="single_post">
+            <div class="single">
+                <p><%= post.username %></p>
+                <h3><%= post.community %></h3>
+                <p><strong>Community:</strong> <%= post.community %></p>
+                <p><strong>Posted by:</strong> <%= post.username %></p>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>Post</title>
+</head>
+<body>
+    <%- include("partials/navbar.ejs") %>
+    <h1 class="new_title">Make A Post</h1>
+    <div class="new_container">
+        <form class="new_post" action="/submit" method="POST">
+            <h3>Community</h3>
+            <select id="community" name="community" required>
+                <option value="">Select Community</option>
+                <%communities.forEach(community => { %>
+                    <option value="<%= community %>"><%= community %></option>
+                <% }) %>
+              </select>
+            <h1>Post Title</h1>
+            <input type="text" name="title" id="title" required>
+            <h3>Post Body</h3>
+            <textarea style="resize: none;" name="body" id="body" cols="30" rows="10" required></textarea>
+            <button class="btn" type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

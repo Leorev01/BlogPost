@@ -1,0 +1,81 @@
+[
+  {
+    "post_id": 3,
+    "username": "Leo",
+    "community": "Testing",
+    "title": "Testing 2",
+    "body": "Testing"
+  },
+  {
+    "post_id": 4,
+    "username": "L",
+    "community": "Testing whatever",
+    "title": "t edited",
+    "body": "t edited too"
+  },
+  {
+    "post_id": 5,
+    "username": "L",
+    "community": "Y",
+    "title": "Y edited",
+    "body": "Y edited too"
+  },
+  {
+    "post_id": 6,
+    "username": "L",
+    "community": "LAst",
+    "title": "last edited",
+    "body": "last edited"
+  },
+  {
+    "post_id": 7,
+    "username": "Leo",
+    "community": "Checking name",
+    "title": "check",
+    "body": "checking nmae"
+  },
+  {
+    "post_id": 8,
+    "username": "Leo",
+    "community": "3",
+    "title": "trhee",
+    "body": "three"
+  },
+  {
+    "post_id": 9,
+    "username": "L",
+    "community": "ab",
+    "title": "ab edited",
+    "body": "ab edited"
+  },
+  {
+    "post_id": 10,
+    "username": "L",
+    "community": "Business",
+    "title": "Business",
+    "body": "This is the business community's first post"
+  },
+  {
+    "post_id": 11,
+    "username": "Leonardo",
+    "community": "Fitness",
+    "title": "Gym",
+    "body": "Gym time"
+  },
+  {
+    "post_id": 12,
+    "username": "Leonardo",
+    "community": "Food",
+    "title": "Red meat",
+    "body": "Don't underestimate the health of red meat, if you buy quality red meat with high fat content, it is some of the most nutrient-dense meat on the market.",
+    "date": 1717577436426
+  },
+  {
+    "post_id": 13,
+    "username": "L",
+    "community": "Sports",
+    "title": "MMA",
+    "body": "Best sport in existence",
+    "date": 1717580405984
+  }
+]

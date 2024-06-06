@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>Home</title>
+</head>
+<!--Home page-->
+<body>
+    <!--Navbar-->
+    <%- include("partials/navbar.ejs") %>
+
+    <div class="whole_container">
+        <!--Feed-->
+        <%- include("partials/feed.ejs") %>
+
+        <!--Posts/Main section-->
+        <div class="post container">
+            <% if (locals.posts) { %>
+              <% const reversedPosts = posts.slice().reverse(); %>  <% reversedPosts.forEach(post => { %>
+                <div class="posts">
+                  <p>User: <%= post.username %></p>
+                  <p>Community: <%= post.community %></p>
+                  <a style="margin-left: 0;" href="/post/<%= post.post_id %>"><h2 style=" margin: 0;margin-left: 10px;"><%= post.title %></h2></a>
+                  <p><strong><%= post.body %></strong></p>
+                  <p>Posted on: <%= new Date(post.date).toLocaleString() %></p>
+                </div>
+              <% }) %>
+            <% } %>
+          </div>
+
+        <!--Recent posts section-->
+        <div class="recent container">
+            <h2>Recent Posts</h2>
+            <%if(locals.recents  && locals.recents.length > 0){%>
+            <% recents.forEach(recent => { %>
+            <div class="recent_posts">
+                <p>User: <%= recent.username %></p>
+                <p>Community: <%= recent.community %></p>
+                <a style="margin-left: 0;" href="/post/<%= recent.post_id %>"><h2 style=" margin: 0;margin-left: 10px;"><%= recent.title %></h2></a>
+                <p><strong><%= recent.body %></strong></p>
+            </div>
+            <% }) %>
+            <% }else{%>
+                <p>No recent posts</p>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>

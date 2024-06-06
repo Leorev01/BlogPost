@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness</title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+    <!--Navbar-->
+    <%- include("../partials/navbar.ejs") %>
+    <div class="whole_container">
+        <!--Feed-->
+        <%- include("../partials/feed.ejs") %>
+        <div class="first_container">
+            <!--Heading-->
+            <div class="heading">
+                <h1>Fitness Community</h1>
+                <h3>Welcome to the fitness community</h3>
+                <h4>This community is designated only for fitness related posts</h4>
+                <h4>Check out our latest fitness news</h4>
+            </div>
+            
+            <div class="community_container">
+            <%posts.forEach(post => { %>
+                <% if(post.community === "Fitness") {%>
+                    <div class="community_posts">
+                        <p>User: <%= post.username %></p>
+                        <a href="/post/<%= post.post_id %>"><h2><%= post.title %></h2></a>
+                    <p><strong><%= post.body %></strong></p>
+                    </div>
+                    <% } %>
+            <% })%>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

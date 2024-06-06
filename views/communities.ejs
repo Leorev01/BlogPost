@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>Communities</title>
+</head>
+<body>
+    <!--Navbar-->
+    <%- include("partials/navbar.ejs") %>
+    <div class="whole_container">
+        <!--Feed-->
+        <%- include("partials/feed.ejs") %>
+        <div class="first_container">
+            <% if(locals.communities) {%>
+                <% communities.forEach(community => { %>
+                    <a href="/communities/<%= community %>"><h2><%= community %></h2></a>
+                <% }) %>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>

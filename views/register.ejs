@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>Register</title>
+</head>
+<body>
+    <%- include("partials/navbar.ejs") %>
+    <!-- Register page -->
+    <div class="register_container">
+        <h1>Register</h1>
+        <form class="register_form" action="/register" method="POST">
+          <input type="text" name="username" placeholder="username" required />
+          <input type="password" name="password" id="password" placeholder="password" required/>
+          <span id="password-error-message"></span> <a href="/login">Login</a>
+          <button type="submit">Register</button>
+        </form>
+      </div>
+      
+      <script>
+        const passwordInput = document.getElementById('password');
+        const passwordErrorMessage = document.getElementById('password-error-message');
+      
+        // Function to display or hide the error message
+        function toggleErrorMessage(message) {
+          passwordErrorMessage.textContent = message;
+          passwordErrorMessage.style.display = message ? 'block' : 'none';
+        }
+      
+        // Event listener for password input on blur (when user leaves the field)
+        passwordInput.addEventListener('blur', () => {
+          const password = passwordInput.value;
+          
+          if (password.length < 5) {
+            toggleErrorMessage('Password must be at least 5 characters long.');
+          } else {
+            toggleErrorMessage(''); // Clear any existing error message
+          }
+        });
+      </script>
+</body>
+</html>

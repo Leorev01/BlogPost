@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>Navbar</title>
+</head>
+<body>
+    <nav class="navbar">
+        <!-- Logo -->
+        <a href="/"><img id="logo" class="image" src="/images/logo2.png" alt="Logo"/></a>
+        <!-- Search bar -->
+        <input id="search" type="text" placeholder="search">
+        <!-- Messages icon and button -->
+        <a class="image remove" href="../messages"><img id="messages" src="/images/messages.jpg" alt="Messages"/></a>
+        <!-- Create blog post icon and button -->
+        <a class="image remove" href="../new_post"><img id="new_post" src="/images/new_post.jpg" alt="New Post"/></a>
+        <!-- Profile pic -->
+        <a class="image remove" href="../profile"><img id="profile_pic" src="/images/pfp.jpg" alt="Profile"/></a>
+        <!-- Dropdown for small screens -->
+        <div class="dropdown">
+            <button class="dropbtn">☰ Menu</button>
+            <div class="dropdown-content">
+                <a href="../messages"><img id="dropdown_messages" class="image" src="/images/messages.jpg" alt="Messages"/>Messages</a>
+                <a href="../new_post"><img id="dropdown_new_post" class="image" src="/images/new_post.jpg" alt="New Post"/>New Post</a>
+                <a href="../profile"><img id="dropdown_profile_pic" class="image" src="/images/Caesar_profile_pic.webp" alt="Profile"/>Profile</a>
+            </div>
+        </div>
+    </nav>
+</body>
+</html>
